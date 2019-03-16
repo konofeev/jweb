@@ -1,0 +1,30 @@
+plugins
+{
+    id "java"
+    id "war"
+}
+
+repositories
+{
+    maven
+    {
+    	url "http://central.maven.org/maven2"
+    }
+}
+
+test
+{
+    useJUnitPlatform()
+}
+
+dependencies
+{
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.4.0")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.4.0")
+}
+
+test
+{
+    testLogging.showStandardStreams = true
+}
+
