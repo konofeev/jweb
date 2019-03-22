@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+    version            = "3.1"
+    xmlns              = "http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi          = "http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation = "http://xmlns.jcp.org/xml/ns/javaee
+                          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <!-- По умолчанию сервлеты расширяются. Отключение аннотаций выполняется параметром metadata-complete  = "true"> -->
+
+    <!-- Параметры конфигурации Java Server Faces -->
+
+    <!-- Уточнить за что отвечает??? -->
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+
+    <!-- Уточнить за что отвечает??? -->
+    <context-param>
+        <param-name>javax.faces.CLIENT_WINDOW_MODE</param-name>
+        <param-value>url</param-value>
+    </context-param>
+
+    <!-- Уточнить за что отвечает??? -->
+    <context-param>
+        <param-name>facelets.SKIP_COMMENTS</param-name>
+        <param-value>true</param-value>
+    </context-param>  
+
+    <!-- Загружаемый серверлет (JSF) -->
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!-- Описание тестового сервлета -->
+    <servlet>
+        <servlet-name>Test servlet</servlet-name>
+        <servlet-class>konofeev.servlet.ServletTest</servlet-class>
+        <init-param>
+            <param-name>type</param-name>
+            <param-value>Конфигурация в xml-файле</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Test servlet</servlet-name>
+        <url-pattern>/servletTest</url-pattern>
+        <url-pattern>/servletTest2</url-pattern>
+    </servlet-mapping>
+
+    <!-- Переадресация на JSF -->
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Таймаут сессии - 30 минут -->
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+        <cookie-config>
+            <name>JAVA_SESSION_ID_TEST</name>
+        </cookie-config>
+    </session-config>
+
+    <!-- Главная страница -->
+    <welcome-file-list>
+        <welcome-file>faces/index.xhtml</welcome-file>
+    </welcome-file-list>
+
+</web-app>
