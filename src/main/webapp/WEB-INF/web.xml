@@ -34,22 +34,6 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <!-- Описание тестового сервлета -->
-    <servlet>
-        <servlet-name>Test servlet</servlet-name>
-        <servlet-class>konofeev.servlet.ServletTest</servlet-class>
-        <init-param>
-            <param-name>type</param-name>
-            <param-value>Конфигурация в xml-файле</param-value>
-        </init-param>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>Test servlet</servlet-name>
-        <url-pattern>/servletTest</url-pattern>
-        <url-pattern>/servletTest2</url-pattern>
-    </servlet-mapping>
-
     <!-- Переадресация на JSF -->
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
