@@ -37,7 +37,7 @@ public class GenericTest
     void contrvariant()
     {
         List<Number> nums = new ArrayList<Number>();
-        List<? super Integer> ints = nums;
+        //List<? super Integer> ints = nums;
         nums.add(5);
         // Integer int1 = nums.get(0); // Нельзя читать значения
         Object obj1 = nums.get(0);

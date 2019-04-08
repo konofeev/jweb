@@ -28,11 +28,8 @@ dependencies
     implementation 'javax.servlet:javax.servlet-api:4.0.1'
     implementation 'javax.inject:javax.inject:1'
     implementation 'javax.enterprise:cdi-api:2.0.SP1'
-    liquibaseRuntime 'org.liquibase:liquibase-core:3.6.3'
-    liquibaseRuntime 'org.apache.derby:derby:10.15.1.3'
-    liquibaseRuntime 'org.apache.derby:derbyclient:10.15.1.3'
-    implementation 'org.apache.derby:derby:10.15.1.3'
-    implementation 'org.apache.derby:derbyclient:10.15.1.3'
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+    implementation 'javax.validation:validation-api:2.0.1.Final'
 }
 
 test
@@ -64,7 +61,7 @@ liquibase {
             Properties properties = new Properties()
             properties.load(new FileInputStream(propsFile))
             changeLogFile 'src/main/resources/liquibase/changeLogMaster.xml'
-            url 'jdbc:derby://localhost:1527/j2ee;create=true'
+            url 'jdbc:derby://localhost:1527/sun-appserv-samples'
             username 'APP'
             password 'APP'
         }

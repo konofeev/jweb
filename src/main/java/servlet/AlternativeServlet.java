@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet ("/alternative")
 public class AlternativeServlet extends HttpServlet
 {
+    private static final long serialVersionUID = 1L;
+
     @Inject
     private GenerateString generateString;
 

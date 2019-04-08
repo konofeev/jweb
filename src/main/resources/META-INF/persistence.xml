@@ -5,9 +5,9 @@
     xsi:schemaLocation = "http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
     version            = "2.1">
 
-    <persistence-unit name = "j2ee">
+    <persistence-unit name = "junit">
         <jta-data-source>jdbc/__default</jta-data-source>
-
-        <class>konofeev.entities.Content</class>
+        <class>entity.Content</class>
     </persistence-unit>
+
 </persistence>        

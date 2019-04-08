@@ -18,6 +18,7 @@ import service.BookService;
 @WebServlet (urlPatterns = {"/inject"})
 public class InjectServlet extends HttpServlet
 {
+    private static final long serialVersionUID = 1L;
     @Inject @QualifierInjectTest
     private MyInject injectTest;
 
