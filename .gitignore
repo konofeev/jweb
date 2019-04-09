@@ -5,3 +5,5 @@ build
 .project
 derby.log
 sun-appserv-samples/
+.settings
+.vscode
