@@ -7,3 +7,4 @@ derby.log
 sun-appserv-samples/
 .settings
 .vscode
+.classpath
