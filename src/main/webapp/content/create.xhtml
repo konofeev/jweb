@@ -17,7 +17,7 @@
                 <ui:define name="content">
                     <h1>#{bundle['page.content.content']}</h1>
 
-                    <c:forEach var="item" items="#{content.contentList}">
+                    <c:forEach var="item" items="#{contentService.contentList}">
                         <div class="content-item" id="content-item-#{item.id}">
                             <h2>#{item.name}</h2>
                             <div>#{item.content}</div>

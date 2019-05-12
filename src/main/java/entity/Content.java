@@ -6,12 +6,9 @@ import javax.validation.constraints.Size;
 
 import java.io.Serializable;
 
-import javax.enterprise.context.RequestScoped;
-
 /**
  * Контент
  */
-@RequestScoped
 @Entity
 @NamedQueries(
 {

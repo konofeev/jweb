@@ -1,20 +1,21 @@
 package service;
 
+import entity.Content;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import entity.Content;
 
 /**
  * Сервис работы с контентом
  */
-@Named("content")
-@RequestScoped
+@Named
+@Stateless
 public class ContentService
 {
-    @PersistenceContext(unitName="junit")
+    @PersistenceContext(unitName="jweb")
     EntityManager entityManager;
 
     /**
@@ -31,8 +32,14 @@ public class ContentService
         ).getResultList();
     }
 
-    public Content save(Content content)
+    public Content createContent(Content content)
     {
-        return null;
+        entityManager.persist(content);
+        return content;
+    }
+
+    public Content findContentById(Long id)
+    {
+        return entityManager.find(Content.class, id);
     }
 }
