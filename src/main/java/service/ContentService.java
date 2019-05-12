@@ -14,7 +14,7 @@ import entity.Content;
 @RequestScoped
 public class ContentService
 {
-    @PersistenceContext(unitName="junit")
+    @PersistenceContext(unitName="jweb")
     EntityManager entityManager;
 
     /**

@@ -5,9 +5,13 @@
     xsi:schemaLocation = "http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
     version            = "2.1">
 
-    <persistence-unit name = "junit">
+    <persistence-unit name = "jweb">
         <jta-data-source>jdbc/__default</jta-data-source>
         <class>entity.Content</class>
+        <properties>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="eclipselink.logging.level" value="INFO"/>
+        </properties>
     </persistence-unit>
 
 </persistence>        

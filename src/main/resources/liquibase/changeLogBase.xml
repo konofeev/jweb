@@ -17,7 +17,33 @@
             </column>
         </createTable>
         <rollback>
-            <dropTable tableName="Content"/>
+            <dropTable tableName="CONTENT"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="2" author="Konofeev Roman">
+        <createTable tableName="BOOK">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="float">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(2000)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nbOfPage" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="illustrations" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="BOOK"/>
         </rollback>
     </changeSet>
 
