@@ -29,7 +29,7 @@ public class ContentController
                 "The content" + content.getName() + " has been created with id=" + content.getId()
             )
         );
-        return "newContent.xhtml";
+        return "list.xhtml";
     }
 
     public void doFindContentById() 
