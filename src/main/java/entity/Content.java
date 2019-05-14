@@ -1,5 +1,6 @@
 package entity;
 
+import javax.inject.Inject;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -44,10 +45,12 @@ public class Content implements Serializable
     private String name;
     public String getName()
     {
+        System.out.println("Content#getName(): " + name);
         return name;
     }
     public void setName(String name)
     {
+        System.out.println("Content#setName(): " + name);
         this.name = name;
     }
     
@@ -58,10 +61,12 @@ public class Content implements Serializable
     private String content;
     public String getContent()
     {
+        System.out.println("Content#getContent(): " + content);
         return content;
     }
     public void setContent(String content)
     {
+        System.out.println("Content#setContent(): " + content);
         this.content = content;
     }
 

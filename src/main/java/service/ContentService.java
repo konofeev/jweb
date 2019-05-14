@@ -2,8 +2,10 @@ package service;
 
 import entity.Content;
 import java.util.List;
+import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,6 +17,9 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class ContentService
 {
+    @Inject
+    private Logger logger;
+
     @PersistenceContext(unitName="jweb")
     EntityManager entityManager;
 
@@ -25,6 +30,7 @@ public class ContentService
      */
     public List<Content> getContentList()
     {
+        logger.info("Получение списка контента");
         return entityManager.createNamedQuery
         (
             "getAllContent",
@@ -34,12 +40,14 @@ public class ContentService
 
     public Content createContent(Content content)
     {
+        logger.info("Создание контента: " + content);
         entityManager.persist(content);
         return content;
     }
 
     public Content findContentById(Long id)
     {
+        logger.info("Получение контента. Идентификатор: " + id);
         return entityManager.find(Content.class, id);
     }
 }

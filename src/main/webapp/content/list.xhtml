@@ -11,7 +11,7 @@
         <div class="container">
             <ui:composition template="./../WEB-INF/template.xhtml">
                 <ui:define name="menu">
-                    <p>#{bundle['page.content.menu']}</p>
+                    <a class="btn btn-primary" role="button" href="${facesContext.externalContext.requestContextPath}/faces/content/create.xhtml">#{bundle['page.template.left.menu.content.create']}</a>
                 </ui:define>
 
                 <ui:define name="content">
@@ -20,17 +20,17 @@
                     <h:dataTable value="#{contentService.contentList}" var="content" class="table table-bordered">
 
                         <h:column>    				
-                            <f:facet name = "header">Id</f:facet>    				
+                            <f:facet name = "header">Идентификатор</f:facet>    				
                             #{content.id}
                         </h:column>
 
                         <h:column>
-                            <f:facet name = "header">Name</f:facet>
+                            <f:facet name = "header">Наименование</f:facet>
                             #{content.name}
                         </h:column>
 
                         <h:column>
-                            <f:facet name = "header">Content</f:facet>
+                            <f:facet name = "header">Содрежимое</f:facet>
                             #{content.content}
                         </h:column>
 

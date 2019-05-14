@@ -11,7 +11,7 @@
         <div class="container">
             <ui:composition template="./../WEB-INF/template.xhtml">
                 <ui:define name="menu">
-                    <p>#{bundle['page.content.menu']}</p>
+                    <a class="btn btn-primary" role="button" href="${facesContext.externalContext.requestContextPath}/faces/content/list.xhtml">#{bundle['page.template.left.menu.content.list']}</a>
                 </ui:define>
 
                 <ui:define name="content">
@@ -19,14 +19,14 @@
 
                     <h:form id="contentForm">
                         <h:panelGrid columns="2">
-                            <h:outputLabel value="Name : "/>
+                            <h:outputLabel value="Наименование: "/>
                             <h:inputText value="#{contentController.content.name}"/>
 
-                            <h:outputLabel value="Content : "/>
-                            <h:inputTextarea value="#{contentController.content.content}" cols="40" rows="5"/>
+                            <h:outputLabel value="Содержимое: "/>
+                            <h:inputTextarea value="#{contentController.content.content}" cols="80" rows="10"/>
                         </h:panelGrid>
 
-                        <h:commandButton value="Create a content" action="#{contentController.doCreateContent}" />
+                        <h:commandButton value="Создать" action="#{contentController.doCreateContent}" />
                     </h:form>
                 </ui:define>
             </ui:composition>

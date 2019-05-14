@@ -1,6 +1,7 @@
 package controller;
 
 import entity.Content;
+import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -16,8 +17,12 @@ public class ContentController
     private ContentService contentService;
     private Content content = new Content();
 
+    @Inject
+    private Logger logger;
+
     public String doCreateContent() 
     {
+        logger.info("ContentController#doCreateContent(): name=" + content.getName());
         contentService.createContent(content);
         FacesContext.getCurrentInstance().addMessage
         (
@@ -44,6 +49,7 @@ public class ContentController
 
     public void setContent(Content content) 
     {
+        logger.info("ContentController#setContent(): name=" + content.getName());
         this.content = content;
     }
 }
