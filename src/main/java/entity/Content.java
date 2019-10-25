@@ -79,6 +79,10 @@ public class Content implements Serializable
 
     /**
      * Конструктор
+     *
+     * @param id Идентификатор
+     * @param name Наименование
+     * @param content Контент
      */
     public Content(Integer id, String name, String content)
     {
@@ -87,6 +91,12 @@ public class Content implements Serializable
         this.content = content;
     }
 
+    /**
+     * Конструктор
+     *
+     * @param name Наименование
+     * @param content Контент
+     */
     public Content(String name, String content)
     {
         this.name    = name;

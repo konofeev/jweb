@@ -8,7 +8,10 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
                                                                            
-
+/**
+ * Фильтр кодировки
+ * Читаем данные в кодировке UTF-8
+ */
 @WebFilter("/*")
 public class CharacterEncodingFilter implements Filter 
 {

@@ -15,10 +15,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import service.BookService;
 
+/**
+ * Сервлет - внедрение зависимостей
+ */
 @WebServlet (urlPatterns = {"/inject"})
 public class InjectServlet extends HttpServlet
 {
     private static final long serialVersionUID = 1L;
+
+    /**
+     * Внедрение ресурса с использование квалификатора
+     */
     @Inject @QualifierInjectTest
     private MyInject injectTest;
 
@@ -64,12 +71,13 @@ public class InjectServlet extends HttpServlet
                 print(out, "Exception: " + exception.getMessage());
                 print(out, "Exception: " + exception.toString());
             }
+            out.println("</br><a href=\"./\">Home</a>");
             out.println("</body></html>");
 
         }
         catch (Exception exception)
         {
-            // ignore
+            System.out.println(exception.getMessage());
         }
     }
 

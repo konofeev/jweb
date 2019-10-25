@@ -6,9 +6,16 @@ import inject.ThirteenDigits;
 import javax.inject.Inject;
 import log.Loggable;
 
+/**
+ * Сервис книг
+ */
 @Loggable
 public class BookService
 {
+    /**
+     * Внедрение зависимостей
+     * Реализация внедрения выбирается аннотацией <code>ThirteenDigits</code>
+     */
     @Inject @ThirteenDigits
     private NumberGenerator numberGenerator;
 

@@ -50,4 +50,10 @@ public class ContentService
         logger.info("Получение контента. Идентификатор: " + id);
         return entityManager.find(Content.class, id);
     }
+    
+    public void remove(Content content)
+    {
+        logger.info("Удаление контента. Идентификатор: " + content.getId());
+        entityManager.remove(content);
+    }
 }

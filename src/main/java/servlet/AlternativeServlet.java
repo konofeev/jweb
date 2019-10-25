@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Сервлет - альтернативы
+ */
 @WebServlet ("/alternative")
 public class AlternativeServlet extends HttpServlet
 {
@@ -41,6 +44,7 @@ public class AlternativeServlet extends HttpServlet
             out.println("</head><body>");
             out.println("<h2>Альтернативы</h2>");
             out.println("<p>" + generateString.generate() + "</p>");
+            out.println("</br><a href=\"./\">Home</a>");
             out.println("</body></html>");
         }
         catch (Exception exception)
